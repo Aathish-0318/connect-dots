@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Connect the Dots</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ Important for mobile -->
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #42a5f5, #1e88e5);
+      color: #fff;
+      padding: 20px; /* ✅ Adds spacing on very small screens */
+    }
+
+    .menu-container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px 60px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+      animation: fadeIn 1s ease-in-out;
+      max-width: 400px; /* ✅ Prevents it from being too wide */
+      width: 100%;
+    }
+
+    .menu-container h1 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem); /* ✅ Adjusts automatically */
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .menu-container button {
+      background: #ffca28;
+      border: none;
+      padding: 12px 25px;
+      font-size: clamp(1rem, 4vw, 1.2rem); /* ✅ Responsive font */
+      border-radius: 12px;
+      cursor: pointer;
+      color: #333;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      width: 100%; /* ✅ Button fills container width on small screens */
+      max-width: 250px;
+    }
+
+    .menu-container button:hover {
+      background: #ffc107;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ✅ Mobile adjustments */
+    @media (max-width: 480px) {
+      .menu-container {
+        padding: 25px 20px;
+      }
+      .menu-container button {
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <h1>🎮 Connect the Dots</h1>
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <script>
+    function startGame() {
+      window.location = "game.html?level=easy";
+    }
+  </script>
+</body>
+</html>
